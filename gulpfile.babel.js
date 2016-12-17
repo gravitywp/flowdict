@@ -82,9 +82,14 @@ gulp.task('chromeManifest', () => {
 gulp.task('babel', () => {
   return gulp.src('app/scripts.babel/**/*.js')
       .pipe($.babel({
-        presets: ['es2015']
+        presets: [['env', {
+	  targets: {"chrome": 52},
+	  modules: false
+	}]],
+	plugins: ["transform-runtime"]
       }))
-      .pipe(gulp.dest('app/scripts'));
+    .pipe($.browserify())
+    .pipe(gulp.dest('app/scripts'));
 });
 
 gulp.task('clean', del.bind(null, ['.tmp', 'dist']));

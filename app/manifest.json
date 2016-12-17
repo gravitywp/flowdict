@@ -48,6 +48,7 @@
         "https://www.youtube.com/*"
       ],
       "js": [
+	"lib/rx.all.js",
         "scripts/contentscript.js"
       ],
       "run_at": "document_end",
