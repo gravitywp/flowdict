@@ -1,0 +1,3 @@
+# flowdict
+A Chrome extension. Learn English new word while watching Youtube.
+[WIP].....
